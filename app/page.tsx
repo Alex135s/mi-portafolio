@@ -2,16 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image"; // Componente optimizado para imágenes
-// --- IMPORTACIÓN DE ICONOS ACTUALIZADA ---
-// Se añadieron: BarChart3, Cloud, Users, Rocket para las skills
+import Image from "next/image"; 
 import { 
   Github, Linkedin, Code2, Terminal, X, Database, Layers, 
   Image as ImageIcon, Video, ExternalLink, Mail, FileText,
-  BarChart3, Cloud, Users, Rocket // <-- Nuevos iconos importados
+  BarChart3, Cloud, Users, Rocket 
 } from "lucide-react";
 
-// --- DATOS DE SKILLS CON ICONOS Y COLORES ---
+// --- DATOS DE SKILLS ---
 const heroSkills = [
   { 
     name: "Python & SQL", 
@@ -45,7 +43,7 @@ const heroSkills = [
   }
 ];
 
-// --- TUS PROYECTOS (Sin cambios aquí) ---
+// --- TUS PROYECTOS ---
 const projectsData = [
   {
     id: 1,
@@ -75,7 +73,7 @@ const projectsData = [
     fullDesc: "Aplicación Web Progresiva (SPA) para la gestión de inventarios, usuarios y ventas. Lo revolucionario de este proyecto es la integración de un Chatbot con Inteligencia Artificial (Dialogflow) que permite consultar stock, registrar productos y navegar por el sistema mediante comandos de voz y lenguaje natural.",
     images: [
         "/PY1_DASHBOARD.png",    
-        "/ASISTENTEWEB.mp4",     
+        "https://www.youtube.com/embed/L1VnQwdr_5o", // ✅ URL DE YOUTUBE AGREGADA AQUÍ
         "/PY2.png",              
         "/PY3.png"               
     ],
@@ -93,6 +91,8 @@ const projectsData = [
   
 ];
 
+// Helpers para detectar tipo de archivo
+const isYouTube = (url: string) => url.includes("youtube") || url.includes("youtu.be");
 const isVideo = (fileName: string) => fileName.toLowerCase().endsWith(".mp4");
 
 export default function Home() {
@@ -128,10 +128,9 @@ export default function Home() {
 
       <main className="relative z-10 pt-32 pb-20 px-6 max-w-6xl mx-auto">
         
-        {/* --- HERO SECTION: FOTO + TEXTO + SKILLS MEJORADOS --- */}
+        {/* HERO SECTION */}
         <div className="flex flex-col-reverse md:flex-row items-center gap-12 mb-32">
           
-          {/* COLUMNA IZQUIERDA: TEXTO Y BIO */}
           <div className="flex-1 text-center md:text-left space-y-6">
             <div className="inline-block px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-medium">
               🚀 Disponible para nuevos retos
@@ -141,27 +140,23 @@ export default function Home() {
               Ingeniero de <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Datos & Sistemas</span>
             </h1>
             
-            {/* BIO */}
             <p className="text-xl text-gray-400 leading-relaxed max-w-2xl">
               Hola, soy <strong>Geremy Hernandez</strong>. Ingeniero especializado en transformar datos complejos en estrategias claras usando <span className="text-white">Power BI, Python y SQL</span>. 
               Tengo experiencia construyendo arquitecturas en <span className="text-white">Google Cloud</span> y liderando la innovación tecnológica en mi región como Organizador del <span className="text-white">GDG Ica</span>.
             </p>
 
-            {/* --- NUEVA SECCIÓN DE ETIQUETAS DE SKILLS CON ICONOS Y COLORES --- */}
             <div className="flex flex-wrap justify-center md:justify-start gap-3 py-4">
                 {heroSkills.map((skill) => (
                   <span 
                     key={skill.name} 
                     className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm font-medium transition-all cursor-default shadow-sm ${skill.colorClasses}`}
                   >
-                    {/* Renderizamos el icono dinámicamente */}
                     <skill.icon size={16} className="shrink-0" />
                     {skill.name}
                   </span>
                 ))}
             </div>
 
-            {/* BOTONES DE REDES */}
             <div className="flex justify-center md:justify-start gap-4 pt-2">
               <a href="https://github.com/Alex135s" target="_blank" className="p-3 bg-[#1a1a1a] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all group">
                 <Github className="w-6 h-6" />
@@ -172,7 +167,6 @@ export default function Home() {
               <a href="mailto:geremy3132@gmail.com" className="p-3 bg-[#1a1a1a] border border-white/10 rounded-full hover:bg-red-500 hover:text-white transition-all group">
                 <Mail className="w-6 h-6" />
               </a>
-              {/* BOTÓN DE CV */}
               <a 
                 href="https://drive.google.com/file/d/1nOP1pUFx-fyQh4TcBCVKbkNr4Z1KIz91/view?usp=sharing" 
                 target="_blank" 
@@ -184,15 +178,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* COLUMNA DERECHA: FOTO */}
           <div className="flex-1 flex justify-center md:justify-end relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-purple-500 blur-[80px] opacity-40 rounded-full" />
-            
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition duration-500">
-               {/* FOTO OPTIMIZADA CON NEXT/IMAGE */}
                <Image 
                  src="/GEREMYFOTO.png" 
-                 alt="Geremy Hernandez Peña" 
+                 alt="Geremy Hernandez" 
                  fill
                  priority
                  className="object-cover" 
@@ -215,14 +206,12 @@ export default function Home() {
                 onClick={() => setSelectedProject(project)} 
                 className="group relative bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-indigo-500/10"
               >
-                {/* Imagen Preview */}
                 <div className="relative h-56 bg-gray-900 overflow-hidden">
                   <img 
                     src={project.images[0]} 
                     alt={project.title} 
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105" 
                   />
-                  
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
                       <ExternalLink size={16} /> Ver Detalles
@@ -262,6 +251,7 @@ export default function Home() {
           <div className="relative bg-[#0f0f0f] border border-white/10 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl animate-in fade-in zoom-in duration-300 flex flex-col">
             
             <div className="relative w-full bg-[#050505] p-4 flex justify-center items-center border-b border-white/10">
+               {/* Previsualización en el encabezado del modal */}
                <img 
                  src={selectedProject.images[0]} 
                  alt={selectedProject.title}
@@ -317,7 +307,20 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {selectedProject.images.slice(1).map((mediaFile, index) => (
                             <div key={index} className="rounded-xl overflow-hidden border border-white/10 shadow-lg bg-[#050505] group relative">
-                                {isVideo(mediaFile) ? (
+                                {isYouTube(mediaFile) ? (
+                                    <div className="relative w-full h-64 bg-black">
+                                        <div className="absolute top-2 left-2 z-10 bg-red-600 text-white text-xs px-2 py-1 rounded font-bold flex items-center gap-1 pointer-events-none">
+                                            <Video size={12} /> VIDEO DEMO
+                                        </div>
+                                        <iframe 
+                                            src={mediaFile} 
+                                            className="w-full h-full"
+                                            title="YouTube video player"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowFullScreen
+                                        />
+                                    </div>
+                                ) : isVideo(mediaFile) ? (
                                     <div className="relative w-full h-64 bg-black flex flex-col justify-center">
                                         <div className="absolute top-2 left-2 z-10 bg-red-600 text-white text-xs px-2 py-1 rounded font-bold flex items-center gap-1">
                                             <Video size={12} /> VIDEO DEMO
