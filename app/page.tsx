@@ -114,7 +114,7 @@ export default function Home() {
             <div className="w-8 h-8 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center text-white">
               <Code2 size={18} />
             </div>
-            <span>Alex135s</span>
+            <span>Geremy</span>
           </div>
           <div className="flex items-center gap-6 text-sm font-medium">
             <Link href="#proyectos" className="hover:text-white transition-colors">Proyectos</Link>
@@ -137,7 +137,7 @@ export default function Home() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight">
-              Ingeniero de <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Datos & Sistemas</span>
+              Ingeniero de <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Sistemas & Analista de datos Jr</span>
             </h1>
             
             <p className="text-xl text-gray-400 leading-relaxed max-w-2xl">
@@ -161,7 +161,7 @@ export default function Home() {
               <a href="https://github.com/Alex135s" target="_blank" className="p-3 bg-[#1a1a1a] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all group">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="https://linkedin.com/in/geremy-hernandez" target="_blank" className="p-3 bg-[#1a1a1a] border border-white/10 rounded-full hover:bg-[#0077b5] hover:text-white transition-all group">
+              <a href="https://www.linkedin.com/in/geremy-alexander-hernandez-peña-059a51267" target="_blank" className="p-3 bg-[#1a1a1a] border border-white/10 rounded-full hover:bg-[#0077b5] hover:text-white transition-all group">
                 <Linkedin className="w-6 h-6" />
               </a>
               <a href="mailto:geremy3132@gmail.com" className="p-3 bg-[#1a1a1a] border border-white/10 rounded-full hover:bg-red-500 hover:text-white transition-all group">
@@ -353,7 +353,7 @@ export default function Home() {
       )}
 
       <footer className="border-t border-white/5 bg-[#050505] py-8 text-center text-gray-600 text-sm">
-        <p>© 2024 Alex135s. Construido con Next.js & Tailwind.</p>
+        <p>© 2025 Geremy Hernandez Peña. Construido con Next.js & Tailwind.</p>
       </footer>
     </div>
   );
