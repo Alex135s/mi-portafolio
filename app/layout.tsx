@@ -5,8 +5,22 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portafolio de Alex135s | Desarrollador Full Stack",
-  description: "Portafolio profesional de Alex135s. Ingeniero de Sistemas y Desarrollador Web.",
+  title: "Geremy Hernández | Desarrollador Full Stack Jr. & Infraestructura TI",
+  description:
+    "Portafolio de Geremy Hernández, Practicante de Infraestructura y Telecomunicaciones y Desarrollador Jr. Full Stack. .NET, C#, React, SQL Server, Power BI y Google Cloud.",
+  openGraph: {
+    title: "Geremy Hernández | Desarrollador Full Stack Jr. & Infraestructura TI",
+    description:
+      "Practicante de Infraestructura y Telecomunicaciones y Desarrollador Jr. Full Stack. Proyectos, experiencia y certificaciones.",
+    locale: "es_PE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Geremy Hernández | Desarrollador Full Stack Jr. & Infraestructura TI",
+    description:
+      "Practicante de Infraestructura y Telecomunicaciones y Desarrollador Jr. Full Stack.",
+  },
 };
 
 export default function RootLayout({
