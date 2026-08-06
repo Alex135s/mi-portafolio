@@ -6,6 +6,9 @@ import {
   Code2,
   Users,
   Rocket,
+  Settings2,
+  Building2,
+  Stethoscope,
 } from "lucide-react";
 
 export const profile = {
@@ -38,48 +41,50 @@ export const heroSkills: SkillChip[] = [
     name: ".NET & C#",
     icon: Code2,
     colorClasses:
-      "bg-indigo-950/30 border-indigo-500/30 text-indigo-300 hover:bg-indigo-900/40 hover:border-indigo-400/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
   },
   {
     name: "Python & SQL",
     icon: Database,
     colorClasses:
-      "bg-cyan-950/30 border-cyan-500/30 text-cyan-300 hover:bg-cyan-900/40 hover:border-cyan-400/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
   },
   {
     name: "Power BI Data Analyst",
     icon: BarChart3,
     colorClasses:
-      "bg-amber-950/30 border-amber-500/30 text-amber-300 hover:bg-amber-900/40 hover:border-amber-400/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
   },
   {
     name: "Google Cloud Platform",
     icon: Cloud,
     colorClasses:
-      "bg-sky-950/30 border-sky-500/30 text-sky-300 hover:bg-sky-900/40 hover:border-sky-400/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
   },
   {
     name: "Scrum Foundation",
     icon: Users,
     colorClasses:
-      "bg-teal-950/30 border-teal-500/30 text-teal-300 hover:bg-teal-900/40 hover:border-teal-400/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
   },
   {
     name: "NASA Galactic Solver",
     icon: Rocket,
     colorClasses:
-      "bg-rose-950/30 border-rose-500/30 text-rose-300 hover:bg-rose-900/40 hover:border-rose-400/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
   },
 ];
 
 export type SkillGroup = {
   category: string;
+  icon: LucideIcon;
   items: string[];
 };
 
 export const skillGroups: SkillGroup[] = [
   {
     category: "Desarrollo",
+    icon: Code2,
     items: [
       ".NET 8",
       "C#",
@@ -95,10 +100,12 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "Bases de datos",
+    icon: Database,
     items: ["SQL Server", "PostgreSQL", "Firebase"],
   },
   {
     category: "Cloud & Infraestructura",
+    icon: Cloud,
     items: [
       "Google Cloud (BigQuery, Cloud Storage, Cloud SQL)",
       "Active Directory",
@@ -112,10 +119,12 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "Business Intelligence",
+    icon: BarChart3,
     items: ["Power BI", "Looker Studio", "Excel avanzado", "R"],
   },
   {
     category: "Herramientas & Metodologías",
+    icon: Settings2,
     items: ["Visual Studio", "VS Code", "Git", "Scrum", "Análisis de datos"],
   },
 ];
@@ -125,6 +134,7 @@ export type ExperienceItem = {
   role: string;
   period: string;
   current: boolean;
+  icon: LucideIcon;
   bullets: string[];
 };
 
@@ -134,6 +144,7 @@ export const experience: ExperienceItem[] = [
     role: "Practicante de Infraestructura y Telecomunicaciones",
     period: "Ene 2025 – Ene 2027",
     current: true,
+    icon: Building2,
     bullets: [
       "Diseño y desarrollo de ActivosTI, aplicación web interna en .NET 8 para la gestión de activos tecnológicos.",
       "Levantamiento de requerimientos junto al área de TI y traducción a funcionalidades del sistema.",
@@ -146,6 +157,7 @@ export const experience: ExperienceItem[] = [
     role: "Practicante Pre-Profesional — Soporte y Análisis de Datos",
     period: "Jun 2025 – Sep 2025",
     current: false,
+    icon: Stethoscope,
     bullets: [
       "Soporte técnico a las áreas de Triaje, Admisión, Medicina y Estadística; digitación en el sistema HIS-MINSA y elaboración de tramas.",
       "Desarrollo de reportes en Power BI, Excel y R para apoyar la toma de decisiones de la gerencia.",
@@ -157,6 +169,7 @@ export const experience: ExperienceItem[] = [
     role: "Practicante Pre-Profesional — Business Intelligence",
     period: "Jun 2023 – Oct 2023",
     current: false,
+    icon: BarChart3,
     bullets: [
       "Elaboración de dashboards en Power BI y Looker Studio para el análisis de indicadores clave.",
       "Desarrollo de consultas SQL para integrar y limpiar datos de diversas fuentes; automatización de reportes con Python, reduciendo tiempos en un 30%.",
@@ -184,6 +197,7 @@ export type ActivityItem = {
   title: string;
   period: string;
   desc: string;
+  icon: LucideIcon;
 };
 
 export const activities: ActivityItem[] = [
@@ -191,11 +205,13 @@ export const activities: ActivityItem[] = [
     title: "Jefe de Logística — GDG Ica (Google Developer Group)",
     period: "Jul 2023 – Actualidad",
     desc: "Organización y coordinación logística de eventos técnicos de la comunidad, gestión de sedes, equipamiento y alianzas con empresas.",
+    icon: Users,
   },
   {
     title: "NASA International Space Apps Challenge 2025",
     period: "2025",
     desc: "Reconocimiento \"Galactic Problem Solver\" por el proyecto OXYRA: predicción de calidad del aire con datos satelitales y meteorológicos.",
+    icon: Rocket,
   },
 ];
 

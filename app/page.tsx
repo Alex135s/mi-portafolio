@@ -10,10 +10,10 @@ import Footer from "@/app/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#050505] text-gray-300 font-sans selection:bg-indigo-500/30">
+    <div className="min-h-screen bg-white text-slate-600 font-sans selection:bg-indigo-100">
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-900/20 rounded-full blur-[128px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-900/20 rounded-full blur-[128px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-indigo-100/40 rounded-full blur-[128px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-sky-100/40 rounded-full blur-[128px]" />
       </div>
 
       <Navbar />
