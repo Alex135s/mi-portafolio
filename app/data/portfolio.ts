@@ -26,7 +26,7 @@ export const profile = {
     "https://www.linkedin.com/in/geremy-alexander-hernandez-pe%C3%B1a-059a51267",
   github: "https://github.com/Alex135s",
   githubHandle: "Alex135s",
-  englishLevel: "Intermedio (B1)",
+  englishLevel: "Intermedio-Avanzado (B2)",
   cvPath: "/CV_Geremy_Hernandez.pdf",
 };
 
@@ -41,37 +41,37 @@ export const heroSkills: SkillChip[] = [
     name: ".NET & C#",
     icon: Code2,
     colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
   {
     name: "Python & SQL",
     icon: Database,
     colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
   {
     name: "Power BI Data Analyst",
     icon: BarChart3,
     colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
   {
     name: "Google Cloud Platform",
     icon: Cloud,
     colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
   {
     name: "Scrum Foundation",
     icon: Users,
     colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
   {
     name: "NASA Galactic Solver",
     icon: Rocket,
     colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50",
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
 ];
 

@@ -10,6 +10,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Paleta de Google, usada como acento principal (GDG Ica / Google Cloud) */
+  --color-google-blue: #4285f4;
+  --color-google-blue-dark: #1a73e8;
+  --color-google-blue-light: #e8f0fe;
+  --color-google-blue-border: #aecbfa;
+  --color-google-red: #ea4335;
+  --color-google-yellow: #fbbc05;
+  --color-google-green: #34a853;
 }
 
 body {

@@ -24,7 +24,7 @@ export default function Navbar() {
             href="#top"
             className="flex items-center gap-2 font-bold text-slate-900 tracking-wider"
           >
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+            <div className="w-8 h-8 bg-google-blue rounded-lg flex items-center justify-center text-white">
               <Code2 size={18} />
             </div>
             <span>{profile.name}</span>
@@ -42,7 +42,7 @@ export default function Navbar() {
             ))}
             <a
               href={`mailto:${profile.email}`}
-              className="bg-indigo-600 text-white px-4 py-2 rounded-full font-bold hover:bg-indigo-700 transition"
+              className="bg-google-blue text-white px-4 py-2 rounded-full font-bold hover:bg-google-blue-dark transition"
             >
               Contactar
             </a>
@@ -75,7 +75,7 @@ export default function Navbar() {
           <a
             href={`mailto:${profile.email}`}
             onClick={() => setOpen(false)}
-            className="bg-indigo-600 text-white px-4 py-2 rounded-full font-bold text-center"
+            className="bg-google-blue text-white px-4 py-2 rounded-full font-bold text-center"
           >
             Contactar
           </a>

@@ -40,7 +40,7 @@ export default function Contact() {
   return (
     <section id="contacto" className="mb-20 scroll-mt-32">
       <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
-        <Mail className="text-indigo-600" /> Contacto
+        <Mail className="text-google-blue" /> Contacto
       </h2>
 
       <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -51,9 +51,9 @@ export default function Contact() {
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition-all"
+              className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-200 hover:border-google-blue-border hover:shadow-sm transition-all"
             >
-              <item.icon className="text-indigo-600 shrink-0" size={20} />
+              <item.icon className="text-google-blue shrink-0" size={20} />
               <div>
                 <p className="text-xs uppercase tracking-wider text-slate-500 font-medium">
                   {item.label}
@@ -66,18 +66,17 @@ export default function Contact() {
 
         <div className="space-y-4">
           <div className="flex items-center gap-3 text-slate-700">
-            <MapPin className="text-indigo-600 shrink-0" size={20} />
+            <MapPin className="text-google-blue shrink-0" size={20} />
             <span>{profile.location}</span>
           </div>
           <div className="flex items-center gap-3 text-slate-700">
-            <Globe className="text-indigo-600 shrink-0" size={20} />
+            <Globe className="text-google-blue shrink-0" size={20} />
             <span>Inglés {profile.englishLevel}</span>
           </div>
           <a
             href={profile.cvPath}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold px-5 py-3 rounded-xl hover:bg-indigo-700 transition-all w-full shadow-sm"
+            download="CV_Geremy_Hernandez.pdf"
+            className="flex items-center justify-center gap-2 bg-google-blue text-white font-bold px-5 py-3 rounded-xl hover:bg-google-blue-dark transition-all w-full shadow-sm"
           >
             <FileText className="w-5 h-5" />
             Descargar CV

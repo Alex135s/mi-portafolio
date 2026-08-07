@@ -1,5 +1,6 @@
 import { User, MapPin, Globe, GraduationCap } from "lucide-react";
 import { profile, education } from "@/app/data/portfolio";
+import GoogleDots from "./GoogleDots";
 
 const quickFacts = [
   { icon: MapPin, label: "Ubicación", value: profile.location },
@@ -15,7 +16,7 @@ export default function About() {
   return (
     <section id="sobre-mi" className="mb-32 scroll-mt-32">
       <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
-        <User className="text-indigo-600" /> Sobre mí
+        <User className="text-google-blue" /> Sobre mí
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -39,7 +40,9 @@ export default function About() {
           </p>
           <p>
             Fuera del trabajo soy{" "}
-            <span className="text-slate-900 font-medium">Jefe de Logística del GDG Ica</span>{" "}
+            <span className="text-google-blue-dark font-medium">
+              Jefe de Logística del GDG Ica <GoogleDots />
+            </span>{" "}
             (Google Developer Group), organizando eventos técnicos para la comunidad tech de mi
             región, y participé en el NASA International Space Apps Challenge 2025 con OXYRA,
             reconocido como &quot;Galactic Problem Solver&quot;.
@@ -52,7 +55,7 @@ export default function About() {
               key={fact.label}
               className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-start gap-3"
             >
-              <fact.icon className="text-indigo-600 shrink-0 mt-0.5" size={20} />
+              <fact.icon className="text-google-blue shrink-0 mt-0.5" size={20} />
               <div>
                 <p className="text-xs uppercase tracking-wider text-slate-500 font-medium">
                   {fact.label}

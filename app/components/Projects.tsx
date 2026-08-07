@@ -19,7 +19,7 @@ const isVideo = (fileName: string) => fileName.toLowerCase().endsWith(".mp4");
 function PlaceholderMedia({ project, className }: { project: Project; className?: string }) {
   return (
     <div
-      className={`flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-indigo-50 via-slate-50 to-sky-50 ${className ?? ""}`}
+      className={`flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-google-blue-light via-slate-50 to-sky-50 ${className ?? ""}`}
     >
       <project.placeholderIcon className="text-slate-300" size={40} />
       <span className="text-slate-400 text-xs font-medium uppercase tracking-wider">
@@ -36,7 +36,7 @@ export default function Projects() {
     <>
       <section id="proyectos" className="mb-32 scroll-mt-32">
         <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
-          <Terminal className="text-indigo-600" /> Proyectos Destacados
+          <Terminal className="text-google-blue" /> Proyectos Destacados
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -44,7 +44,7 @@ export default function Projects() {
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-indigo-300 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl"
+              className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-google-blue-border transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl"
             >
               <div className="relative h-56 bg-slate-100 overflow-hidden">
                 {project.placeholder ? (
@@ -64,7 +64,7 @@ export default function Projects() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-google-blue transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-slate-600 text-sm mb-4 line-clamp-2">{project.shortDesc}</p>
@@ -131,7 +131,7 @@ export default function Projects() {
                       href={selectedProject.repoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-bold transition hover:scale-105 shadow-sm"
+                      className="flex items-center gap-2 bg-google-blue hover:bg-google-blue-dark text-white px-6 py-3 rounded-xl font-bold transition hover:scale-105 shadow-sm"
                     >
                       <Github size={20} /> Repositorio
                     </a>
@@ -147,16 +147,16 @@ export default function Projects() {
 
               <div className="mb-12">
                 <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                  <Layers className="text-indigo-600" /> Stack Tecnológico
+                  <Layers className="text-google-blue" /> Stack Tecnológico
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {selectedProject.techStack.map((tech) => (
                     <div
                       key={tech.name}
-                      className="bg-slate-50 p-4 rounded-xl border border-slate-200 hover:border-indigo-300 transition-colors"
+                      className="bg-slate-50 p-4 rounded-xl border border-slate-200 hover:border-google-blue-border transition-colors"
                     >
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="bg-indigo-50 text-indigo-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider border border-indigo-200">
+                        <span className="bg-google-blue-light text-google-blue-dark text-xs font-bold px-2 py-1 rounded uppercase tracking-wider border border-google-blue-border">
                           {tech.name}
                         </span>
                       </div>
@@ -169,7 +169,7 @@ export default function Projects() {
               {selectedProject.images.length > 1 && (
                 <div className="mb-8">
                   <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                    <ImageIcon className="text-indigo-600" /> Galería del Sistema
+                    <ImageIcon className="text-google-blue" /> Galería del Sistema
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {selectedProject.images.slice(1).map((mediaFile, index) => (

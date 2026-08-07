@@ -9,13 +9,13 @@ export default function Hero() {
       className="flex flex-col-reverse md:flex-row items-center gap-12 mb-32 scroll-mt-32"
     >
       <div className="flex-1 text-center md:text-left space-y-6">
-        <div className="inline-block px-4 py-1.5 rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 text-sm font-medium">
+        <div className="inline-block px-4 py-1.5 rounded-full border border-google-blue-border bg-google-blue-light text-google-blue-dark text-sm font-medium">
           🚀 Disponible para nuevos retos
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
           {profile.roles[0]} &{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-sky-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-google-blue to-google-blue-dark">
             {profile.roles[1]}
           </span>
         </h1>
@@ -36,7 +36,7 @@ export default function Hero() {
               key={skill.name}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm font-medium transition-all cursor-default shadow-sm ${skill.colorClasses}`}
             >
-              <skill.icon size={16} className="shrink-0 text-indigo-600" />
+              <skill.icon size={16} className="shrink-0 text-google-blue" />
               {skill.name}
             </span>
           ))}
@@ -45,9 +45,8 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 pt-2">
           <a
             href={profile.cvPath}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-indigo-600 text-white font-bold px-5 py-3 rounded-full hover:bg-indigo-700 transition-all hover:scale-105 shadow-sm"
+            download="CV_Geremy_Hernandez.pdf"
+            className="flex items-center gap-2 bg-google-blue text-white font-bold px-5 py-3 rounded-full hover:bg-google-blue-dark transition-all hover:scale-105 shadow-sm"
           >
             <FileText className="w-5 h-5" />
             Descargar CV
@@ -81,7 +80,7 @@ export default function Hero() {
       </div>
 
       <div className="flex-1 flex justify-center md:justify-end relative">
-        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-200 to-sky-200 blur-[80px] opacity-60 rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-google-blue-light to-google-blue-border blur-[80px] opacity-60 rounded-full" />
         <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-slate-200 shadow-xl rotate-3 hover:rotate-0 transition duration-500">
           <Image
             src="/GEREMYFOTO.png"
