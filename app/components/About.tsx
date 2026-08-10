@@ -15,7 +15,7 @@ const quickFacts = [
 export default function About() {
   return (
     <section id="sobre-mi" className="mb-32 scroll-mt-32">
-      <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+      <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2 font-heading">
         <User className="text-google-blue" /> Sobre mí
       </h2>
 

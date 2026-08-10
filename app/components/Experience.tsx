@@ -4,12 +4,12 @@ import GoogleDots from "./GoogleDots";
 
 export default function Experience() {
   return (
-    <section id="experiencia" className="mb-32 scroll-mt-32">
-      <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+    <section id="experiencia" className="mb-32 scroll-mt-32 bg-slate-50 rounded-xl p-6 md:p-10">
+      <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2 font-heading">
         <Briefcase className="text-google-blue" /> Experiencia
       </h2>
 
-      <div className="relative border-l border-slate-200 pl-12 space-y-10">
+      <div className="relative border-l border-slate-300 pl-12 space-y-10">
         {experience.map((job) => (
           <div key={job.company} className="relative">
             <span
@@ -22,7 +22,7 @@ export default function Experience() {
               <job.icon size={16} />
             </span>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-slate-900 font-heading">
                 {job.role} <span className="text-slate-500 font-normal">· {job.company}</span>
               </h3>
               <span className="text-sm text-slate-500 shrink-0">{job.period}</span>
@@ -43,14 +43,14 @@ export default function Experience() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
         <div>
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2 font-heading">
             <GraduationCap className="text-google-blue" size={22} /> Educación
           </h3>
           <div className="space-y-4">
             {education.map((item) => (
               <div
                 key={item.degree}
-                className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-start gap-3"
+                className="bg-white border border-slate-200 rounded-xl p-4 flex items-start gap-3"
               >
                 <GraduationCap className="text-google-blue shrink-0 mt-0.5" size={20} />
                 <div>
@@ -68,14 +68,14 @@ export default function Experience() {
         </div>
 
         <div>
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2 font-heading">
             <Award className="text-amber-500" size={22} /> Actividades y reconocimientos
           </h3>
           <div className="space-y-4">
             {activities.map((activity) => (
               <div
                 key={activity.title}
-                className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-start gap-3"
+                className="bg-white border border-slate-200 rounded-xl p-4 flex items-start gap-3"
               >
                 <activity.icon className="text-amber-500 shrink-0 mt-0.5" size={20} />
                 <div>

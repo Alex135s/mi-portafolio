@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <Link
             href="#top"
-            className="flex items-center gap-2 font-bold text-slate-900 tracking-wider"
+            className="flex items-center gap-2 font-bold text-slate-900 tracking-wider font-heading"
           >
             <div className="w-8 h-8 bg-google-blue rounded-lg flex items-center justify-center text-white">
               <Code2 size={18} />
@@ -61,7 +61,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden mt-2 bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl px-6 py-4 shadow-lg flex flex-col gap-4 text-sm font-medium text-slate-600">
+        <div className="md:hidden mt-2 bg-white/95 backdrop-blur-xl border border-slate-200 rounded-xl px-6 py-4 shadow-lg flex flex-col gap-4 text-sm font-medium text-slate-600">
           {navLinks.map((link) => (
             <Link
               key={link.href}

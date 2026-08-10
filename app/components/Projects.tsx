@@ -35,7 +35,7 @@ export default function Projects() {
   return (
     <>
       <section id="proyectos" className="mb-32 scroll-mt-32">
-        <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+        <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2 font-heading">
           <Terminal className="text-google-blue" /> Proyectos Destacados
         </h2>
 
@@ -44,7 +44,7 @@ export default function Projects() {
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-google-blue-border transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl"
+              className="group relative bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-google-blue-border transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl"
             >
               <div className="relative h-56 bg-slate-100 overflow-hidden">
                 {project.placeholder ? (
@@ -64,7 +64,7 @@ export default function Projects() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-google-blue transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-google-blue transition-colors font-heading">
                   {project.title}
                 </h3>
                 <p className="text-slate-600 text-sm mb-4 line-clamp-2">{project.shortDesc}</p>
@@ -91,7 +91,7 @@ export default function Projects() {
             onClick={() => setSelectedProject(null)}
           />
 
-          <div className="relative bg-white border border-slate-200 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl animate-in fade-in zoom-in duration-300 flex flex-col">
+          <div className="relative bg-white border border-slate-200 rounded-xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl animate-in fade-in zoom-in duration-300 flex flex-col">
             <div className="relative w-full bg-slate-50 p-4 flex justify-center items-center border-b border-slate-200">
               {selectedProject.placeholder ? (
                 <PlaceholderMedia
@@ -118,7 +118,7 @@ export default function Projects() {
             <div className="p-8">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4 mb-6">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-heading">
                     {selectedProject.title}
                   </h2>
                   <p className="text-slate-600 text-lg leading-relaxed">
@@ -146,7 +146,7 @@ export default function Projects() {
               <hr className="border-slate-200 my-8" />
 
               <div className="mb-12">
-                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2 font-heading">
                   <Layers className="text-google-blue" /> Stack Tecnológico
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -168,7 +168,7 @@ export default function Projects() {
 
               {selectedProject.images.length > 1 && (
                 <div className="mb-8">
-                  <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2 font-heading">
                     <ImageIcon className="text-google-blue" /> Galería del Sistema
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

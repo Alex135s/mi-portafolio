@@ -1,6 +1,5 @@
 import { BadgeCheck, Cloud, Network, Users, BarChart3, ExternalLink, Sparkles } from "lucide-react";
 import { certifications, type Certification } from "@/app/data/portfolio";
-import GoogleDots from "./GoogleDots";
 
 function certIcon(cert: Certification) {
   const issuer = cert.issuer.toLowerCase();
@@ -17,26 +16,28 @@ export default function Certifications() {
 
   return (
     <section id="certificaciones" className="mb-32 scroll-mt-32">
-      <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+      <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2 font-heading">
         <BadgeCheck className="text-google-blue" /> Certificaciones
       </h2>
 
       {featured && (
-        <div className="mb-6 rounded-2xl border border-google-blue-border bg-gradient-to-br from-google-blue-light via-white to-white p-6 flex flex-col sm:flex-row sm:items-center gap-5 shadow-sm">
-          <div className="w-14 h-14 rounded-xl bg-google-blue flex items-center justify-center shrink-0">
-            <Cloud className="text-white" size={28} />
+        <div className="mb-6 rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+          <div className="h-1.5 w-full bg-gradient-to-r from-google-blue via-google-red via-google-yellow to-google-green" />
+          <div className="p-6 flex flex-col sm:flex-row sm:items-center gap-5">
+            <div className="w-14 h-14 rounded-xl bg-google-blue flex items-center justify-center shrink-0">
+              <Cloud className="text-white" size={28} />
+            </div>
+            <div className="flex-1">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-google-blue-dark mb-1">
+                <Sparkles size={12} /> Certificación destacada
+              </span>
+              <p className="text-slate-900 font-bold text-lg font-heading">{featured.name}</p>
+              <p className="text-slate-600 text-sm mt-0.5">
+                {featured.issuer}
+                {featured.date ? ` · ${featured.date}` : ""}
+              </p>
+            </div>
           </div>
-          <div className="flex-1">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-google-blue-dark mb-1">
-              <Sparkles size={12} /> Certificación destacada
-            </span>
-            <p className="text-slate-900 font-bold text-lg">{featured.name}</p>
-            <p className="text-slate-600 text-sm mt-0.5">
-              {featured.issuer}
-              {featured.date ? ` · ${featured.date}` : ""}
-            </p>
-          </div>
-          <GoogleDots size={8} />
         </div>
       )}
 

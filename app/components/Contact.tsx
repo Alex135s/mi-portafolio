@@ -39,11 +39,11 @@ const contactLinks = [
 export default function Contact() {
   return (
     <section id="contacto" className="mb-20 scroll-mt-32">
-      <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+      <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2 font-heading">
         <Mail className="text-google-blue" /> Contacto
       </h2>
 
-      <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {contactLinks.map((item) => (
             <a
