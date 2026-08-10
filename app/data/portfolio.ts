@@ -275,31 +275,48 @@ export const projects: Project[] = [
     id: 1,
     title: "ActivosTI — Sistema de Gestión de Activos de TI",
     shortDesc:
-      "Plataforma interna en .NET 8 para gestionar +800 activos tecnológicos de ElectroDunas con firma digital y alertas automáticas.",
+      "Plataforma interna en .NET 8 con dos portales, firma digital verificable y chatbot con IA, para gestionar +800 activos tecnológicos de ElectroDunas.",
     fullDesc:
-      "Sistema web corporativo desarrollado durante mi práctica en ElectroDunas S.A.A. para centralizar el registro, mantenimiento y control de más de 800 activos tecnológicos (laptops, celulares, impresoras y otros) usados por más de 200 usuarios en 9 a 11 áreas de la empresa. Incluye monitoreo automatizado de impresoras vía protocolo SNMP, generación de actas de entrega con firma digital electrónica a través de un portal del empleado —el proceso pasó de 5–10 minutos a menos de 2, ~75% menos tiempo— y un chatbot con Machine Learning entrenado en Google Colab para consultas internas.",
-    images: [],
-    placeholder: true,
+      "Sistema web corporativo desarrollado durante mi práctica en ElectroDunas S.A.A. para centralizar la gestión de más de 800 activos tecnológicos (laptops, celulares, impresoras y más) entre más de 200 usuarios en 9 a 11 áreas. Tiene dos frentes: un panel para analistas de TI —inventario con filtros y carga masiva desde Excel, gestión de usuarios con roles y permisos granulares por módulo, bitácora de auditoría con IP y detalle de cada cambio, generador de reportes en PDF y CSV— y un Portal del Empleado de autoservicio donde cada colaborador ve sus equipos, firma sus actas y solicita devoluciones o reenvíos; cada devolución pasa por un checklist de verificación presencial (funciona, trae accesorios, coincide con lo declarado, fotos) antes de que el analista la apruebe. Cada firma genera un certificado electrónico verificable con código QR, token, IP y fecha/hora —el proceso pasó de 5–10 minutos a menos de 2, ~75% menos tiempo—. Al registrar un nuevo ingreso, el sistema busca los datos por DNI contra la API de RENIEC (API Perú) y autocompleta nombres y apellidos, con cero margen de error de digitación. Un chatbot con Machine Learning entrenado en Google Colab resuelve dudas sobre equipos y actas, y genera y descarga reportes en PDF o CSV por conversación. El sistema también monitorea vía SNMP el estado y nivel de tóner de las impresoras, con alertas automáticas.",
+    images: [
+      "/activosti-login.png",
+      "/activosti-panel-graficos.png",
+      "/activosti-inventario.png",
+      "/activosti-roles-permisos.png",
+      "/activosti-chatbot-reporte.png",
+    ],
     placeholderIcon: Database,
     techStack: [
       {
         name: ".NET 8 (Razor Pages)",
-        desc: "Backend y vistas del sistema, con arquitectura en capas.",
+        desc: "Dos frentes: panel de analista de TI y Portal del Empleado de autoservicio.",
       },
       {
         name: "SQL Server + EF Core",
-        desc: "Modelado de base de datos y acceso a datos.",
+        desc: "Modelado de datos para activos, usuarios, roles, actas y bitácora de auditoría.",
+      },
+      {
+        name: "API Perú (RENIEC)",
+        desc: "Autocompleta nombres y apellidos al buscar por DNI, para cero margen de error al dar de alta a un colaborador.",
+      },
+      {
+        name: "Firma electrónica verificable",
+        desc: "Certificado con código QR, token, IP y fecha/hora; devoluciones revisadas con checklist de verificación presencial.",
+      },
+      {
+        name: "Roles y permisos granulares",
+        desc: "RBAC por módulo (activos, actas, impresoras, reportes, usuarios) para Administrador, Analista de TI, Auditoría y más.",
       },
       {
         name: "SNMP",
-        desc: "Monitoreo automatizado del parque de impresoras, incluyendo nivel de tinta.",
+        desc: "Monitoreo automático del estado y nivel de tóner de las impresoras, con alertas.",
       },
       {
-        name: "Machine Learning",
-        desc: "Chatbot de consultas internas entrenado en Google Colab.",
+        name: "Chatbot con Machine Learning",
+        desc: "Asistente entrenado en Google Colab que resuelve dudas y genera reportes en PDF/CSV por conversación.",
       },
     ],
-    tags: ["Full Stack", ".NET", "SQL Server", "Proyecto corporativo"],
+    tags: ["Full Stack", ".NET", "Chatbot IA", "Proyecto corporativo"],
   },
   {
     id: 2,
