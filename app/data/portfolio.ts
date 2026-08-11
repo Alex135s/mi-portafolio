@@ -262,6 +262,8 @@ export type Project = {
   title: string;
   shortDesc: string;
   fullDesc: string;
+  features?: string[];
+  impact?: string[];
   images: string[];
   placeholder?: boolean;
   placeholderIcon: LucideIcon;
@@ -277,7 +279,25 @@ export const projects: Project[] = [
     shortDesc:
       "Plataforma interna en .NET 8 con dos portales, firma digital verificable y chatbot con IA, para gestionar +800 activos tecnológicos de ElectroDunas.",
     fullDesc:
-      "Sistema web corporativo desarrollado durante mi práctica en ElectroDunas S.A.A. para centralizar la gestión de más de 800 activos tecnológicos (laptops, celulares, impresoras y más) entre más de 200 usuarios en 9 a 11 áreas. Tiene dos frentes: un panel para analistas de TI —inventario con filtros y carga masiva desde Excel, gestión de usuarios con roles y permisos granulares por módulo, bitácora de auditoría con IP y detalle de cada cambio, generador de reportes en PDF y CSV— y un Portal del Empleado de autoservicio donde cada colaborador ve sus equipos, firma sus actas y solicita devoluciones o reenvíos; cada devolución pasa por un checklist de verificación presencial (funciona, trae accesorios, coincide con lo declarado, fotos) antes de que el analista la apruebe. Cada firma genera un certificado electrónico verificable con código QR, token, IP y fecha/hora —el proceso pasó de 5–10 minutos a menos de 2, ~75% menos tiempo—. Al registrar un nuevo ingreso, el sistema busca los datos por DNI contra la API de RENIEC (API Perú) y autocompleta nombres y apellidos, con cero margen de error de digitación. Un chatbot con Machine Learning entrenado en Google Colab resuelve dudas sobre equipos y actas, y genera y descarga reportes en PDF o CSV por conversación. El sistema también monitorea vía SNMP el estado y nivel de tóner de las impresoras, con alertas automáticas.",
+      "Sistema web corporativo desarrollado durante mi práctica en ElectroDunas S.A.A. para centralizar la gestión de más de 800 activos tecnológicos (laptops, celulares, impresoras y más) entre más de 200 usuarios en 9 a 11 áreas. Tiene dos frentes: un panel para analistas de TI y un Portal del Empleado de autoservicio.",
+    features: [
+      "Inventario de activos con filtros, carga masiva desde Excel y exportación a Excel.",
+      "Gestión de usuarios con roles y permisos granulares por módulo (RBAC).",
+      "Bitácora de auditoría con IP y detalle de cada cambio realizado en el sistema.",
+      "Generador de reportes en PDF y CSV, también disponibles por conversación con el chatbot.",
+      "Portal del Empleado: cada colaborador ve sus equipos, firma sus actas y solicita devoluciones o reenvíos.",
+      "Devoluciones revisadas con checklist de verificación presencial (funciona, accesorios, coincide con lo declarado, fotos).",
+      "Firma electrónica con certificado verificable: código QR, token, IP y fecha/hora.",
+      "Alta de personal integrada con la API de RENIEC (API Perú) para validar datos por DNI.",
+      "Chatbot con Machine Learning entrenado en Google Colab para consultas y generación de reportes.",
+      "Monitoreo automático vía SNMP del estado y nivel de tóner de las impresoras, con alertas.",
+    ],
+    impact: [
+      "Firma de actas: de 5–10 minutos a menos de 2 minutos (~75% menos tiempo).",
+      "Cero margen de error en el alta de personal, gracias a la validación automática por DNI.",
+      "Trazabilidad completa: cada acción del sistema queda registrada con usuario, IP y detalle del cambio.",
+      "Menos tiempo de inactividad en impresoras, con alertas automáticas de tóner antes de que se agote.",
+    ],
     images: [
       "/activosti-login.png",
       "/activosti-panel-graficos.png",

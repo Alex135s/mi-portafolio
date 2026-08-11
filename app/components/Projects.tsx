@@ -10,6 +10,9 @@ import {
   Image as ImageIcon,
   Video,
   ExternalLink,
+  ListChecks,
+  TrendingUp,
+  CheckCircle2,
 } from "lucide-react";
 import { projects, type Project } from "@/app/data/portfolio";
 
@@ -145,6 +148,19 @@ export default function Projects() {
 
               <hr className="border-slate-200 my-8" />
 
+              {selectedProject.features && selectedProject.features.length > 0 && (
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2 font-heading">
+                    <ListChecks className="text-google-blue" /> Funcionalidades
+                  </h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2.5 text-slate-600 text-sm list-disc list-outside ml-4">
+                    {selectedProject.features.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               <div className="mb-12">
                 <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2 font-heading">
                   <Layers className="text-google-blue" /> Stack Tecnológico
@@ -165,6 +181,25 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
+
+              {selectedProject.impact && selectedProject.impact.length > 0 && (
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2 font-heading">
+                    <TrendingUp className="text-emerald-600" /> Mejoras para la empresa
+                  </h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {selectedProject.impact.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2.5 bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-emerald-800 text-sm"
+                      >
+                        <CheckCircle2 className="text-emerald-600 shrink-0 mt-0.5" size={18} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {selectedProject.images.length > 1 && (
                 <div className="mb-8">
@@ -212,18 +247,20 @@ export default function Projects() {
                 </div>
               )}
 
-              <div className="mt-8">
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-blue-800 text-sm flex gap-3 items-start">
-                  <Database className="shrink-0 mt-0.5" size={16} />
-                  <p>
-                    <strong>Nota técnica:</strong> Este proyecto utiliza una arquitectura escalable
-                    y moderna
-                    {selectedProject.repoLink
-                      ? ". Puedes revisar el código fuente completo en mi GitHub."
-                      : "."}
-                  </p>
+              {!selectedProject.impact && (
+                <div className="mt-8">
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-blue-800 text-sm flex gap-3 items-start">
+                    <Database className="shrink-0 mt-0.5" size={16} />
+                    <p>
+                      <strong>Nota técnica:</strong> Este proyecto utiliza una arquitectura
+                      escalable y moderna
+                      {selectedProject.repoLink
+                        ? ". Puedes revisar el código fuente completo en mi GitHub."
+                        : "."}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
