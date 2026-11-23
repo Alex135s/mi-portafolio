@@ -19,6 +19,25 @@ body {
   font-family: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
 }
 
+html {
+  -webkit-tap-highlight-color: rgba(66, 133, 244, 0.16);
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (pointer: fine) {
+  html {
+    overscroll-behavior: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

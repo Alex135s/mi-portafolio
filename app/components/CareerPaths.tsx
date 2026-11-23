@@ -1,12 +1,13 @@
 import { ArrowRight, Code2, ServerCog } from "lucide-react";
+import Link from "next/link";
 
 const paths = [
   {
     title: "Sistemas e Infraestructura",
-    subtitle: "Analista de TI / Analista de Sistemas Jr.",
+    subtitle: "Analista de TI",
     description:
       "Identidades, accesos, dispositivos, soporte, redes, monitoreo y mejora de procesos tecnológicos.",
-    href: "#infraestructura",
+    href: "/infraestructura",
     cta: "Ver experiencia de infraestructura",
     icon: ServerCog,
   },
@@ -15,7 +16,7 @@ const paths = [
     subtitle: "Desarrollador Full Stack Jr.",
     description:
       "Aplicaciones internas con .NET, C#, SQL Server, Python y JavaScript orientadas a problemas reales.",
-    href: "#proyectos",
+    href: "/desarrollo",
     cta: "Ver proyectos de desarrollo",
     icon: Code2,
   },
@@ -29,7 +30,7 @@ export default function CareerPaths() {
           Dos rutas, una misma base técnica
         </p>
         <h2 id="rutas-title" className="text-2xl font-bold text-slate-900 font-heading text-balance">
-          Elige el perfil que mejor encaja con tu vacante
+          Elige la experiencia que quieres evaluar
         </h2>
       </div>
 
@@ -40,12 +41,12 @@ export default function CareerPaths() {
             <p className="text-sm font-semibold text-google-blue-dark">{path.subtitle}</p>
             <h3 className="mt-1 text-2xl font-bold text-slate-900 font-heading">{path.title}</h3>
             <p className="mt-3 leading-relaxed text-slate-600">{path.description}</p>
-            <a
+            <Link
               href={path.href}
               className="mt-6 inline-flex items-center gap-2 font-semibold text-google-blue-dark hover:text-google-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue rounded"
             >
               {path.cta} <ArrowRight size={17} aria-hidden="true" />
-            </a>
+            </Link>
           </article>
         ))}
       </div>

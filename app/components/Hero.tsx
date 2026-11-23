@@ -1,6 +1,8 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react";
+import Link from "next/link";
 import { profile, heroSkills } from "@/app/data/portfolio";
+import { CvTrigger } from "@/app/components/CvModal";
 
 export default function Hero() {
   return (
@@ -26,7 +28,7 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
-          Disponible para nuevos retos
+          {profile.availability}
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight font-heading">
@@ -46,7 +48,7 @@ export default function Hero() {
           {heroSkills.map((skill) => (
             <span
               key={skill.name}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm font-medium transition-all cursor-default shadow-sm ${skill.colorClasses}`}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm font-medium transition-colors cursor-default shadow-sm ${skill.colorClasses}`}
             >
               <skill.icon size={16} className="shrink-0 text-google-blue" />
               {skill.name}
@@ -54,14 +56,19 @@ export default function Hero() {
           ))}
         </div>
 
-        <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 pt-2">
-          <a
-            href={profile.cvPath}
-            className="flex items-center gap-2 bg-google-blue text-white font-bold px-5 py-3 rounded-full hover:bg-google-blue-dark transition-transform hover:scale-105 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue focus-visible:ring-offset-2"
-          >
-            <FileText className="w-5 h-5" />
-            Ver CV Analista TI
+        <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 pt-2">
+          <Link href="/infraestructura" className="flex items-center gap-2 rounded-full bg-google-blue px-5 py-3 font-bold text-white shadow-sm transition-colors hover:bg-google-blue-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue focus-visible:ring-offset-2">
+            Ver experiencia en TI <ArrowRight className="h-5 w-5" aria-hidden="true" />
+          </Link>
+          <a href="#contacto" className="flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 font-bold text-slate-800 transition-colors hover:border-google-blue-border hover:text-google-blue-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue focus-visible:ring-offset-2">
+            <Mail className="h-5 w-5" aria-hidden="true" /> Contactarme
           </a>
+          <CvTrigger
+            className="flex items-center gap-2 rounded-full px-3 py-3 font-semibold text-slate-600 transition-colors hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue"
+          >
+            <FileText className="w-5 h-5" aria-hidden="true" />
+            Ver CV
+          </CvTrigger>
           <a
             href={profile.github}
             target="_blank"

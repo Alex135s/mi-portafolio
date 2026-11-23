@@ -17,7 +17,7 @@ export default function Certifications() {
   return (
     <section id="certificaciones" className="mb-32 scroll-mt-32">
       <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2 font-heading">
-        <BadgeCheck className="text-google-blue" /> Certificaciones
+        <BadgeCheck className="text-google-blue" aria-hidden="true" /> Certificaciones
       </h2>
 
       {featured && (
@@ -25,7 +25,7 @@ export default function Certifications() {
           <div className="h-1.5 w-full bg-gradient-to-r from-google-blue via-google-red via-google-yellow to-google-green" />
           <div className="p-6 flex flex-col sm:flex-row sm:items-center gap-5">
             <div className="w-14 h-14 rounded-xl bg-google-blue flex items-center justify-center shrink-0">
-              <Cloud className="text-white" size={28} />
+              <Cloud className="text-white" size={28} aria-hidden="true" />
             </div>
             <div className="flex-1">
               <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-google-blue-dark mb-1">
@@ -47,10 +47,10 @@ export default function Certifications() {
           return (
             <div
               key={cert.name}
-              className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-sm hover:border-google-blue-border hover:shadow-md transition-all"
+              className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-sm hover:border-google-blue-border hover:shadow-md transition-[border-color,box-shadow]"
             >
               <div className="flex items-start gap-3">
-                <Icon className="text-google-blue shrink-0 mt-0.5" size={20} />
+                <Icon className="text-google-blue shrink-0 mt-0.5" size={20} aria-hidden="true" />
                 <div>
                   <p className="text-slate-900 font-medium">{cert.name}</p>
                   <p className="text-slate-500 text-sm mt-1">
@@ -64,7 +64,7 @@ export default function Certifications() {
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-google-blue text-sm font-medium mt-3 hover:text-google-blue-dark transition-colors"
+                  className="inline-flex items-center gap-1.5 text-google-blue text-sm font-medium mt-3 hover:text-google-blue-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue rounded"
                 >
                   Ver credencial <ExternalLink size={14} />
                 </a>

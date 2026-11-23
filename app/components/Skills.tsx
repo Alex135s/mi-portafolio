@@ -35,21 +35,25 @@ function getBrandIcon(item: string): IconType | null {
   return brandIcons[item] ?? null;
 }
 
-export default function Skills() {
+export default function Skills({ categories, title = "Habilidades técnicas" }: { categories?: string[]; title?: string }) {
+  const visibleGroups = categories
+    ? skillGroups.filter((group) => categories.includes(group.category))
+    : skillGroups;
+
   return (
     <section id="skills" className="mb-32 scroll-mt-32 bg-slate-50 rounded-xl p-6 md:p-10">
       <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2 font-heading">
-        <Layers className="text-google-blue" /> Skills
+        <Layers className="text-google-blue" aria-hidden="true" /> {title}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {skillGroups.map((group) => (
+        {visibleGroups.map((group) => (
           <div
             key={group.category}
             className="bg-white border border-slate-200 rounded-xl p-5"
           >
             <h3 className="text-slate-900 font-bold mb-3 flex items-center gap-2 font-heading">
-              <group.icon className="text-google-blue" size={18} />
+              <group.icon className="text-google-blue" size={18} aria-hidden="true" />
               {group.category}
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -60,7 +64,7 @@ export default function Skills() {
                     key={item}
                     className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded bg-slate-50 text-slate-700 border border-slate-200"
                   >
-                    {BrandIcon && <BrandIcon size={12} className="text-google-blue shrink-0" />}
+                    {BrandIcon && <BrandIcon size={12} className="text-google-blue shrink-0" aria-hidden="true" />}
                     {item}
                   </span>
                 );

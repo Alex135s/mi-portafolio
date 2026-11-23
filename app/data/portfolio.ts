@@ -16,7 +16,7 @@ export const profile = {
   fullName: "Geremy Alexander Hernández Peña",
   roles: [
     "Asistente de TI",
-    "Analista de Sistemas Jr.",
+    "Analista de TI",
   ],
   location: "Ica, Perú",
   email: "geremy3132@gmail.com",
@@ -27,7 +27,8 @@ export const profile = {
   github: "https://github.com/Alex135s",
   githubHandle: "Alex135s",
   englishLevel: "Intermedio (B1)",
-  cvPath: "/cv",
+  availability: "Disponible para oportunidades de TI",
+  cvPath: "/CV_Geremy_Hernandez.pdf",
 };
 
 export type SkillChip = {
@@ -52,18 +53,6 @@ export const heroSkills: SkillChip[] = [
   {
     name: ".NET 8 & C#",
     icon: Code2,
-    colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
-  },
-  {
-    name: "SQL Server & Power BI",
-    icon: Database,
-    colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
-  },
-  {
-    name: "Redes CCNA & SNMP",
-    icon: Settings2,
     colorClasses:
       "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
@@ -273,6 +262,7 @@ export type TechStackEntry = {
 
 export type Project = {
   id: number;
+  slug: string;
   title: string;
   shortDesc: string;
   fullDesc: string;
@@ -282,6 +272,9 @@ export type Project = {
   placeholder?: boolean;
   placeholderIcon: LucideIcon;
   repoLink?: string;
+  demoLink?: string;
+  demoLabel?: string;
+  visible?: boolean;
   techStack: TechStackEntry[];
   tags: string[];
 };
@@ -289,9 +282,10 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
+    slug: "activos-ti",
     title: "ActivosTI — Sistema de Gestión de Activos de TI",
     shortDesc:
-      "Plataforma interna en .NET 8 con dos portales, firma digital verificable y chatbot con IA, para gestionar +800 activos tecnológicos de ElectroDunas.",
+      "Plataforma interna en .NET 8 con dos portales, firma digital verificable y chatbot con IA para gestionar 800+ activos tecnológicos de ElectroDunas.",
     fullDesc:
       "Sistema web corporativo desarrollado durante mi práctica en ElectroDunas S.A.A. para centralizar la gestión de más de 800 activos tecnológicos (laptops, celulares, impresoras y más) entre más de 200 usuarios en 9 a 11 áreas. Tiene dos frentes: un panel para analistas de TI y un Portal del Empleado de autoservicio.",
     features: [
@@ -354,6 +348,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    slug: "oxyra",
     title: "OXYRA — Predicción de Calidad del Aire",
     shortDesc:
       "Aplicación web con datos satelitales y meteorológicos para predecir la calidad del aire en tiempo real.",
@@ -361,6 +356,7 @@ export const projects: Project[] = [
       "Proyecto desarrollado para el NASA International Space Apps Challenge 2025, reconocido con el certificado \"Galactic Problem Solver\". OXYRA integra datos satelitales y meteorológicos para predecir la calidad del aire en tiempo real, con el objetivo de anticipar episodios de contaminación y apoyar decisiones de salud pública.",
     images: [],
     placeholder: true,
+    visible: false,
     placeholderIcon: Rocket,
     techStack: [
       {
@@ -372,6 +368,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    slug: "cerm-2025",
     title: "Sistema de Gestión de Evaluación (CERM 2025)",
     shortDesc:
       "Plataforma integral para calificación automática y reportes de concursos escolares.",
@@ -407,6 +404,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    slug: "smart-inventory",
     title: "Smart Inventory & AI Chatbot",
     shortDesc:
       "Sistema de inventario inteligente con Asistente Virtual por voz.",
@@ -420,6 +418,8 @@ export const projects: Project[] = [
     ],
     placeholderIcon: Code2,
     repoLink: "https://github.com/Alex135s/smart-inventory-assistant",
+    demoLink: "https://www.youtube.com/watch?v=L1VnQwdr_5o",
+    demoLabel: "Ver video demo",
     techStack: [
       {
         name: "JavaScript (ES6)",

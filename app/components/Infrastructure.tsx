@@ -13,7 +13,7 @@ const cases = [
     icon: ServerCog,
     summary:
       "Soporte a usuarios y mantenimiento del parque tecnológico corporativo, integrado con el sistema interno ActivosTI.",
-    evidence: "+800 activos tecnológicos y +200 usuarios atendidos por el área de TI.",
+    evidence: "800+ activos tecnológicos y 200+ usuarios atendidos por el área de TI.",
   },
   {
     title: "Redes y monitoreo",

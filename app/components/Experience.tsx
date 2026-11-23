@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <section id="experiencia" className="mb-32 scroll-mt-32 bg-slate-50 rounded-xl p-6 md:p-10">
       <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2 font-heading">
-        <Briefcase className="text-google-blue" /> Experiencia
+        <Briefcase className="text-google-blue" aria-hidden="true" /> Experiencia
       </h2>
 
       <div className="relative border-l border-slate-300 pl-12 space-y-10">
@@ -19,7 +19,7 @@ export default function Experience() {
                   : "bg-white border-slate-200 text-slate-400"
               }`}
             >
-              <job.icon size={16} />
+              <job.icon size={16} aria-hidden="true" />
             </span>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
               <h3 className="text-lg font-bold text-slate-900 font-heading">
@@ -44,7 +44,7 @@ export default function Experience() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
         <div>
           <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2 font-heading">
-            <GraduationCap className="text-google-blue" size={22} /> Educación
+            <GraduationCap className="text-google-blue" size={22} aria-hidden="true" /> Educación
           </h3>
           <div className="space-y-4">
             {education.map((item) => (
@@ -52,7 +52,7 @@ export default function Experience() {
                 key={item.degree}
                 className="bg-white border border-slate-200 rounded-xl p-4 flex items-start gap-3"
               >
-                <GraduationCap className="text-google-blue shrink-0 mt-0.5" size={20} />
+                <GraduationCap className="text-google-blue shrink-0 mt-0.5" size={20} aria-hidden="true" />
                 <div>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                     <p className="text-slate-900 font-medium">{item.degree}</p>
@@ -69,7 +69,7 @@ export default function Experience() {
 
         <div>
           <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2 font-heading">
-            <Award className="text-amber-500" size={22} /> Actividades y reconocimientos
+            <Award className="text-amber-500" size={22} aria-hidden="true" /> Actividades y reconocimientos
           </h3>
           <div className="space-y-4">
             {activities.map((activity) => (
@@ -77,7 +77,7 @@ export default function Experience() {
                 key={activity.title}
                 className="bg-white border border-slate-200 rounded-xl p-4 flex items-start gap-3"
               >
-                <activity.icon className="text-amber-500 shrink-0 mt-0.5" size={20} />
+                <activity.icon className="text-amber-500 shrink-0 mt-0.5" size={20} aria-hidden="true" />
                 <div>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                     <p className="text-slate-900 font-medium flex items-center gap-2">
