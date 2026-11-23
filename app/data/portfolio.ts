@@ -15,8 +15,8 @@ export const profile = {
   name: "Geremy Hernández",
   fullName: "Geremy Alexander Hernández Peña",
   roles: [
-    "Practicante de Infraestructura y Telecomunicaciones",
-    "Desarrollador Jr. Full Stack",
+    "Asistente de TI",
+    "Analista de Sistemas Jr.",
   ],
   location: "Ica, Perú",
   email: "geremy3132@gmail.com",
@@ -26,8 +26,8 @@ export const profile = {
     "https://www.linkedin.com/in/geremy-alexander-hernandez-pe%C3%B1a-059a51267",
   github: "https://github.com/Alex135s",
   githubHandle: "Alex135s",
-  englishLevel: "Intermedio-Avanzado (B2)",
-  cvPath: "/CV_Geremy_Hernandez.pdf",
+  englishLevel: "Intermedio (B1)",
+  cvPath: "/cv",
 };
 
 export type SkillChip = {
@@ -38,38 +38,38 @@ export type SkillChip = {
 
 export const heroSkills: SkillChip[] = [
   {
-    name: ".NET & C#",
-    icon: Code2,
-    colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
-  },
-  {
-    name: "Python & SQL",
-    icon: Database,
-    colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
-  },
-  {
-    name: "Power BI Data Analyst",
-    icon: BarChart3,
-    colorClasses:
-      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
-  },
-  {
-    name: "Google Cloud Platform",
+    name: "Active Directory & Entra ID",
     icon: Cloud,
     colorClasses:
       "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
   {
-    name: "Scrum Foundation",
-    icon: Users,
+    name: "Intune & SharePoint",
+    icon: Settings2,
     colorClasses:
       "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
   {
-    name: "NASA Galactic Solver",
-    icon: Rocket,
+    name: ".NET 8 & C#",
+    icon: Code2,
+    colorClasses:
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
+  },
+  {
+    name: "SQL Server & Power BI",
+    icon: Database,
+    colorClasses:
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
+  },
+  {
+    name: "Redes CCNA & SNMP",
+    icon: Settings2,
+    colorClasses:
+      "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
+  },
+  {
+    name: "Google Cloud Certified",
+    icon: Cloud,
     colorClasses:
       "bg-slate-50 border-slate-200 text-slate-700 hover:border-google-blue-border hover:bg-google-blue-light/60",
   },
@@ -141,9 +141,23 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     company: "ElectroDunas S.A.A.",
-    role: "Practicante de Infraestructura y Telecomunicaciones",
-    period: "Ene 2025 – Ene 2027",
+    role: "Asistente de TI",
+    period: "12 Oct 2026 – Actualidad",
     current: true,
+    icon: Building2,
+    bullets: [
+      "Administración de identidades, cuentas y accesos mediante Active Directory, Microsoft Entra ID, Intune y SharePoint.",
+      "Gestión, soporte y mantenimiento del parque tecnológico corporativo: computadoras, celulares, impresoras y equipos de red.",
+      "Atención y resolución de incidencias de hardware, software, conectividad y acceso para usuarios de las distintas áreas.",
+      "Mantenimiento y evolución de ActivosTI, sistema interno en .NET 8 y SQL Server para centralizar la gestión de activos tecnológicos.",
+      "Monitoreo de impresoras mediante SNMP y alertas preventivas para reducir tiempos de inactividad.",
+    ],
+  },
+  {
+    company: "ElectroDunas S.A.A.",
+    role: "Practicante de Infraestructura y Telecomunicaciones",
+    period: "2 Ene 2026 – 9 Oct 2026",
+    current: false,
     icon: Building2,
     bullets: [
       "Diseño y desarrollo de ActivosTI, aplicación web interna en .NET 8 para la gestión de activos tecnológicos.",
@@ -186,10 +200,10 @@ export type EducationItem = {
 
 export const education: EducationItem[] = [
   {
-    degree: "Bachiller en Ingeniería de Sistemas e Informática",
+    degree: "Ingeniería de Sistemas e Informática",
     institution: "Universidad Tecnológica del Perú (UTP) — Ica",
     period: "Ago 2021 – Dic 2025",
-    status: "Egresado",
+    status: "Bachiller",
   },
 ];
 

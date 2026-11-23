@@ -1,8 +1,8 @@
 const stats = [
-  { value: "+800", label: "Activos tecnológicos gestionados" },
+  { value: "+800", label: "Activos tecnológicos bajo gestión" },
   { value: "+200", label: "Usuarios en ElectroDunas" },
   { value: "-75%", label: "Tiempo del proceso de firma digital" },
-  { value: "GCP", label: "Associate Cloud Engineer certificado" },
+  { value: "GCP", label: "Associate Cloud Engineer" },
 ];
 
 export default function Highlights() {

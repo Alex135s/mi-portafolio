@@ -11,7 +11,7 @@ export default function Experience() {
 
       <div className="relative border-l border-slate-300 pl-12 space-y-10">
         {experience.map((job) => (
-          <div key={job.company} className="relative">
+          <div key={`${job.company}-${job.role}-${job.period}`} className="relative">
             <span
               className={`absolute -left-[58px] top-0 w-9 h-9 rounded-full border-2 flex items-center justify-center ${
                 job.current

@@ -75,11 +75,10 @@ export default function Contact() {
           </div>
           <a
             href={profile.cvPath}
-            download="CV_Geremy_Hernandez.pdf"
             className="flex items-center justify-center gap-2 bg-google-blue text-white font-bold px-5 py-3 rounded-xl hover:bg-google-blue-dark transition-all w-full shadow-sm"
           >
             <FileText className="w-5 h-5" />
-            Descargar CV
+            Ver CV Analista TI
           </a>
         </div>
       </div>

@@ -24,7 +24,7 @@ export default function About() {
           <p>
             Soy Bachiller en Ingeniería de Sistemas e Informática (egresado de la UTP – Ica) con
             experiencia práctica en infraestructura TI, soporte técnico y desarrollo de software.
-            Actualmente soy practicante de Infraestructura y Telecomunicaciones en{" "}
+            Actualmente soy <span className="text-slate-900 font-medium">Asistente de TI</span> en{" "}
             <span className="text-slate-900 font-medium">ElectroDunas</span>, donde lidero el
             desarrollo de <span className="text-slate-900 font-medium">ActivosTI</span>, un
             sistema web de gestión de activos tecnológicos construido en .NET 8 y SQL Server que

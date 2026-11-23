@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import {
   Github,
   Terminal,
@@ -34,6 +35,25 @@ function PlaceholderMedia({ project, className }: { project: Project; className?
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelectedProject(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedProject]);
 
   return (
     <>
@@ -44,18 +64,22 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <div
+            <button
+              type="button"
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group relative bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-google-blue-border transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl"
+              aria-haspopup="dialog"
+              className="group relative w-full overflow-hidden rounded-xl border border-slate-200 bg-white text-left shadow-sm transition-[border-color,box-shadow] duration-300 hover:border-google-blue-border hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue focus-visible:ring-offset-2"
             >
               <div className="relative h-56 bg-slate-100 overflow-hidden">
                 {project.placeholder ? (
                   <PlaceholderMedia project={project} className="w-full h-full" />
                 ) : (
-                  <img
+                  <Image
                     src={project.images[0]}
                     alt={project.title}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                 )}
@@ -82,19 +106,26 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </section>
 
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-dialog-title"
+        >
+          <button
+            type="button"
+            aria-label="Cerrar detalle del proyecto"
             className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"
             onClick={() => setSelectedProject(null)}
           />
 
-          <div className="relative bg-white border border-slate-200 rounded-xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl animate-in fade-in zoom-in duration-300 flex flex-col">
+          <div className="relative flex max-h-[90vh] w-full max-w-5xl flex-col overflow-y-auto overscroll-contain rounded-xl border border-slate-200 bg-white shadow-2xl animate-in fade-in zoom-in duration-300">
             <div className="relative w-full bg-slate-50 p-4 flex justify-center items-center border-b border-slate-200">
               {selectedProject.placeholder ? (
                 <PlaceholderMedia
@@ -102,17 +133,21 @@ export default function Projects() {
                   className="w-full h-64 rounded-lg"
                 />
               ) : (
-                <img
+                <Image
                   src={selectedProject.images[0]}
                   alt={selectedProject.title}
+                  width={1600}
+                  height={900}
                   className="w-full h-auto max-h-[50vh] object-contain rounded-lg shadow-lg"
                 />
               )}
 
               <button
+                ref={closeButtonRef}
+                type="button"
                 onClick={() => setSelectedProject(null)}
                 aria-label="Cerrar detalle del proyecto"
-                className="absolute top-4 right-4 p-2 bg-white/90 hover:bg-red-500 text-slate-700 hover:text-white rounded-full transition backdrop-blur-md border border-slate-200 z-10"
+                className="absolute top-4 right-4 z-10 rounded-full border border-slate-200 bg-white/90 p-2 text-slate-700 backdrop-blur-md transition-colors hover:bg-red-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
               >
                 <X size={24} />
               </button>
@@ -121,7 +156,7 @@ export default function Projects() {
             <div className="p-8">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4 mb-6">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-heading">
+                  <h2 id="project-dialog-title" className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-heading">
                     {selectedProject.title}
                   </h2>
                   <p className="text-slate-600 text-lg leading-relaxed">
@@ -235,9 +270,11 @@ export default function Projects() {
                             </video>
                           </div>
                         ) : (
-                          <img
+                          <Image
                             src={mediaFile}
                             alt={`Captura ${index + 2} de ${selectedProject.title}`}
+                            width={1200}
+                            height={675}
                             className="w-full h-64 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500"
                           />
                         )}

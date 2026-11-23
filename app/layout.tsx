@@ -1,25 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Usaremos una fuente más estándar y limpia
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Geremy Hernández | Desarrollador Full Stack Jr. & Infraestructura TI",
+  title: "Geremy Hernández | Asistente de TI & Analista de Sistemas Jr.",
   description:
-    "Portafolio de Geremy Hernández, Practicante de Infraestructura y Telecomunicaciones y Desarrollador Jr. Full Stack. .NET, C#, React, SQL Server, Power BI y Google Cloud.",
+    "Portafolio de Geremy Hernández, Asistente de TI y Analista de Sistemas Jr. con experiencia en infraestructura, soporte, identidades, activos tecnológicos y desarrollo de aplicaciones empresariales.",
   openGraph: {
-    title: "Geremy Hernández | Desarrollador Full Stack Jr. & Infraestructura TI",
+    title: "Geremy Hernández | Asistente de TI & Analista de Sistemas Jr.",
     description:
-      "Practicante de Infraestructura y Telecomunicaciones y Desarrollador Jr. Full Stack. Proyectos, experiencia y certificaciones.",
+      "Infraestructura, soporte, identidades, automatización y desarrollo de aplicaciones empresariales.",
     locale: "es_PE",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Geremy Hernández | Desarrollador Full Stack Jr. & Infraestructura TI",
+    title: "Geremy Hernández | Asistente de TI & Analista de Sistemas Jr.",
     description:
-      "Practicante de Infraestructura y Telecomunicaciones y Desarrollador Jr. Full Stack.",
+      "Asistente de TI con experiencia en infraestructura y desarrollo de aplicaciones empresariales.",
   },
 };
 
@@ -30,17 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={inter.className}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

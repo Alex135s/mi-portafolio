@@ -30,18 +30,16 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight font-heading">
-          {profile.roles[0]} &{" "}
-          <span className="text-google-blue-dark">{profile.roles[1]}</span>
+          {profile.roles[0]}
         </h1>
 
         <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-          Hola, soy <strong>{profile.fullName}</strong>. Actualmente practicante en{" "}
-          <span className="text-slate-900 font-medium">ElectroDunas</span>, donde lidero el
-          desarrollo de ActivosTI usando{" "}
-          <span className="text-slate-900 font-medium">.NET 8, C# y SQL Server</span>. Vengo de
-          un camino en análisis de datos con{" "}
-          <span className="text-slate-900 font-medium">Power BI, Python y SQL</span>, y soy
-          Organizador del <span className="text-slate-900 font-medium">GDG Ica</span>.
+          Hola, soy <strong>{profile.fullName}</strong>. Actualmente trabajo como{" "}
+          <span className="text-slate-900 font-medium">Asistente de TI en ElectroDunas</span>,
+          administrando identidades, accesos, dispositivos y soporte corporativo. También desarrollo
+          y mantengo <span className="text-slate-900 font-medium">ActivosTI</span> con{" "}
+          <span className="text-slate-900 font-medium">.NET 8, C# y SQL Server</span>, conectando
+          infraestructura, automatización y desarrollo para resolver necesidades reales del negocio.
         </p>
 
         <div className="flex flex-wrap justify-center md:justify-start gap-3 py-4">
@@ -59,18 +57,17 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 pt-2">
           <a
             href={profile.cvPath}
-            download="CV_Geremy_Hernandez.pdf"
-            className="flex items-center gap-2 bg-google-blue text-white font-bold px-5 py-3 rounded-full hover:bg-google-blue-dark transition-all hover:scale-105 shadow-sm"
+            className="flex items-center gap-2 bg-google-blue text-white font-bold px-5 py-3 rounded-full hover:bg-google-blue-dark transition-transform hover:scale-105 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue focus-visible:ring-offset-2"
           >
             <FileText className="w-5 h-5" />
-            Descargar CV
+            Ver CV Analista TI
           </a>
           <a
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Ver perfil de GitHub"
-            className="p-3 bg-slate-50 border border-slate-200 text-slate-700 rounded-full hover:bg-slate-900 hover:text-white transition-all"
+            className="p-3 bg-slate-50 border border-slate-200 text-slate-700 rounded-full hover:bg-slate-900 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue focus-visible:ring-offset-2"
           >
             <Github className="w-6 h-6" />
           </a>
@@ -79,14 +76,14 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Ver perfil de LinkedIn"
-            className="p-3 bg-slate-50 border border-slate-200 text-slate-700 rounded-full hover:bg-[#0077b5] hover:text-white transition-all"
+            className="p-3 bg-slate-50 border border-slate-200 text-slate-700 rounded-full hover:bg-[#0077b5] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue focus-visible:ring-offset-2"
           >
             <Linkedin className="w-6 h-6" />
           </a>
           <a
             href={`mailto:${profile.email}`}
             aria-label="Enviar correo"
-            className="p-3 bg-slate-50 border border-slate-200 text-slate-700 rounded-full hover:bg-red-500 hover:text-white transition-all"
+            className="p-3 bg-slate-50 border border-slate-200 text-slate-700 rounded-full hover:bg-red-500 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-google-blue focus-visible:ring-offset-2"
           >
             <Mail className="w-6 h-6" />
           </a>

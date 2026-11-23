@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Google Sans para títulos (cargada en layout.tsx vía Google Fonts), Inter para el cuerpo */
-  --font-heading: "Google Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
 
   /* Paleta de Google, usada como acento principal (GDG Ica / Google Cloud) */
   --color-google-blue: #4285f4;
@@ -17,4 +16,54 @@
 body {
   background: #ffffff;
   color: #171717;
+  font-family: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.cv-section {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.cv-section h2 {
+  margin-bottom: 0.55rem;
+  border-bottom: 1px solid #047857;
+  padding-bottom: 0.2rem;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #065f46;
+}
+
+.cv-section h3 {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.cv-section ul {
+  margin-top: 0.35rem;
+  margin-left: 1rem;
+  list-style: disc;
+}
+
+.cv-page-break {
+  break-before: page;
+  page-break-before: always;
+}
+
+@page {
+  size: A4;
+  margin: 0;
 }
